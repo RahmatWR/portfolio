@@ -4,6 +4,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Header Animation
+export const animateHeader = (header) => {
+	gsap.from(header.querySelectorAll(".logo, .nav-item"), {
+		opacity: 0,
+		y: 30,
+		duration: 0.6,
+		ease: "power2.out",
+		stagger: 0.2,
+		toggleActions: "restart none none none",
+	});
+};
+
+export const animateHumbergerNav = (header) => {
+	gsap.from(header.querySelectorAll(".humberger-nav-item"), {
+		opacity: 0,
+		x: -30,
+		duration: 0.6,
+		ease: "power2.out",
+		stagger: 0.2,
+	});
+};
+
 // HERO ANIMATION (on load)
 export const animateHero = (section) => {
 	const tl = gsap.timeline();
@@ -104,7 +126,7 @@ export const animateFooter = (footer) => {
 			start: "top bottom",
 		},
 		opacity: 0,
-		y: 50,
+		y: 10,
 		duration: 0.6,
 		ease: "power2.out",
 		stagger: 0.2,
