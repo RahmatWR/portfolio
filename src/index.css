@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small helper */
+:root {
+	--primary: #3b82f6;
+}
+
+/* simple container */
+.container {
+	@apply max-w-6xl mx-auto px-6;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+}
