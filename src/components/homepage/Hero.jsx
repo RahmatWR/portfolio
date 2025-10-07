@@ -40,7 +40,7 @@ export default function Hero({ ref }) {
 							target="_blank"
 							rel="noreferrer"
 							className="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-primary text-white font-medium shadow hover:bg-blue-600">
-							Chat WhatsApp
+							WhatsApp
 						</a>
 						<a href={`mailto:${EMAIL}`} className="text-gray-600 underline">
 							{EMAIL}
