@@ -29,7 +29,7 @@ export default function Services({ ref, ref2 }) {
 						Services
 					</h2>
 					<p className="text-gray-600 max-w-2xl mx-auto">
-						Solusi profesional untuk kebutuhan pengembangan web modern.
+						Professional solutions for modern web development needs.
 					</p>
 				</div>
 
@@ -42,7 +42,7 @@ export default function Services({ ref, ref2 }) {
 							Front-End Development
 						</h3>
 						<p className="text-gray-700 text-sm leading-relaxed">
-							Membangun antarmuka web dengan React, Tailwind, dan tools modern.
+							Building web interfaces using React, Tailwind, and modern tools.
 						</p>
 					</div>
 
@@ -53,7 +53,8 @@ export default function Services({ ref, ref2 }) {
 							UI Implementation
 						</h3>
 						<p className="text-gray-700 text-sm leading-relaxed">
-							Convert desain dari Figma menjadi tampilan web yang responsive.
+							Converting Figma designs into responsive and pixel-perfect web
+							layouts.
 						</p>
 					</div>
 
@@ -64,7 +65,8 @@ export default function Services({ ref, ref2 }) {
 							Web Optimization
 						</h3>
 						<p className="text-gray-700 text-sm leading-relaxed">
-							Perbaikan performa, maintenance, dan debugging untuk website kamu.
+							Improving performance, maintenance, and debugging for your
+							website.
 						</p>
 					</div>
 				</div>
