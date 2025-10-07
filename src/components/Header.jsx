@@ -1,4 +1,5 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { gsap } from "gsap";
 
 import { animateHeader, animateHumbergerNav } from "../animations";
@@ -20,6 +21,60 @@ export default function Header() {
 		setIsOpen(!isOpen);
 	};
 
+	useEffect(() => {
+		const sections = document.querySelectorAll("section[id]");
+		const navLinks = document.querySelectorAll(".nav-item");
+		const humbergerNavLinks = document.querySelectorAll(".humberger-nav-item");
+
+		let click = false;
+
+		for (const navLink of humbergerNavLinks) {
+			navLink.addEventListener("click", () => {
+				click = true;
+
+				for (const navLink of humbergerNavLinks) {
+					navLink.classList.remove("text-blue-500", "font-semibold");
+				}
+
+				navLink.classList.add("text-blue-500", "font-semibold");
+				setTimeout(() => (click = false), 750);
+			});
+		}
+
+		for (const navLink of navLinks) {
+			navLink.addEventListener("click", () => {
+				click = true;
+
+				for (const navLink of navLinks) {
+					navLink.classList.remove("text-blue-500", "font-semibold");
+				}
+
+				navLink.classList.add("text-blue-500", "font-semibold");
+				setTimeout(() => (click = false), 750);
+			});
+		}
+
+		function handleScroll() {
+			if (click) return;
+			let current = "";
+
+			sections.forEach((section) => {
+				const sectionTop = section.offsetTop - 64;
+				if (window.scrollY >= sectionTop) current = section.getAttribute("id");
+			});
+
+			navLinks.forEach((navLink) => {
+				navLink.classList.remove("text-blue-500", "font-semibold");
+				if (navLink.getAttribute("href") === `#${current}`)
+					navLink.classList.add("text-blue-500", "font-semibold");
+			});
+		}
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	useLayoutEffect(() => {
 		const ctx = gsap.context(() => {
 			if (headerRef.current) animateHumbergerNav(headerRef.current);
@@ -40,8 +95,8 @@ export default function Header() {
 		<header
 			ref={headerRef}
 			className={`${
-				isOpen ? "w-3/4 pb-0" : "w-full"
-			} transition-[width] duration-200 delay-150 py-6 sticky top-0 left-0 z-50 bg-white/70 backdrop-blur-md shadow-sm`}>
+				isOpen ? "w-3/4 pb-0 h-[100vh]" : "w-full"
+			} transition-[width] duration-200 delay-150 py-4 sticky top-0 left-0 z-50 bg-white/70 backdrop-blur-md shadow-sm`}>
 			<div className="container flex items-center justify-between">
 				<div className="logo text-2xl font-extrabold">
 					<a href="/">RAW DEV</a>
@@ -50,11 +105,13 @@ export default function Header() {
 				<nav>
 					{/* Nav's Link */}
 					<ul className={`hidden md:flex items-center gap-6`}>
-						{navLinks.map((nav) => (
+						{navLinks.map((nav, i) => (
 							<li key={nav.label}>
 								<a
 									href={nav.href}
-									className="nav-item hover:text-black inline-block">
+									className={`${
+										i === 0 ? "text-blue-500 font-semibold" : ""
+									} nav-item inline-block hover:text-lg`}>
 									{nav.label}
 								</a>
 							</li>
@@ -87,11 +144,13 @@ export default function Header() {
 				<nav>
 					{/* Nav's Link */}
 					<ul className={`flex flex-col justify-start gap-3`}>
-						{navLinks.map((nav) => (
+						{navLinks.map((nav, i) => (
 							<li key={nav.label}>
 								<a
 									href={nav.href}
-									className="humberger-nav-item hover:text-black inline-block">
+									className={`${
+										i === 0 ? "text-blue-500 font-semibold" : ""
+									} humberger-nav-item inline-block hover:text-lg`}>
 									{nav.label}
 								</a>
 							</li>

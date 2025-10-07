@@ -40,64 +40,13 @@ export default function Hero({ ref }) {
 							target="_blank"
 							rel="noreferrer"
 							className="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-primary text-white font-medium shadow hover:bg-blue-600">
-							Chat via WhatsApp
+							Chat WhatsApp
 						</a>
 						<a href={`mailto:${EMAIL}`} className="text-gray-600 underline">
 							{EMAIL}
 						</a>
 					</div>
 				</div>
-
-				{/* <div className="flex-1 flex justify-center">
-						<div className="w-full max-w-md">
-							<div className="aspect-[4/3] rounded-xl border border-gray-100 bg-white shadow-sm flex items-center justify-center">
-								<svg
-									viewBox="0 0 200 140"
-									className="w-72 h-56"
-									xmlns="http://www.w3.org/2000/svg">
-									<g fill="none" fillRule="evenodd">
-										<path
-											d="M10 100 L100 10 L190 100 L100 140 Z"
-											fill="#EFF6FF"
-										/>
-										<rect
-											x="52"
-											y="50"
-											width="96"
-											height="54"
-											rx="3"
-											fill="#fff"
-											stroke="#DBEAFE"
-										/>
-										<rect
-											x="60"
-											y="60"
-											width="80"
-											height="6"
-											rx="2"
-											fill="#E0F2FE"
-										/>
-										<rect
-											x="60"
-											y="70"
-											width="60"
-											height="6"
-											rx="2"
-											fill="#BFDBFE"
-										/>
-										<rect
-											x="60"
-											y="80"
-											width="40"
-											height="6"
-											rx="2"
-											fill="#93C5FD"
-										/>
-									</g>
-								</svg>
-							</div>
-						</div>
-					</div> */}
 
 				{/* RIGHT - Multi-device Mockup (Desktop + Mobile) */}
 				<div className="flex-1 flex justify-center">
@@ -126,7 +75,7 @@ export default function Hero({ ref }) {
 
 								<div className="mt-6 flex gap-3">
 									<div className="h-9 px-4 rounded bg-primary text-white inline-flex items-center justify-center">
-										Chat via WhatsApp
+										WhatsApp
 									</div>
 									<div className="h-9 px-3 rounded border border-gray-200 inline-flex items-center justify-center text-sm text-gray-600">
 										rahmatwr9@gmail.com
